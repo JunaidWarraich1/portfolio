@@ -96,6 +96,7 @@ export const projects = [
       { label: "Runtime", value: "FastAPI + Vercel" }
     ],
     techStack: ["Python", "FastAPI", "Object-Oriented Design", "Unittest", "JavaScript", "Vercel"],
+    demoCredentials: "Demo PIN: 4321 (Muhammad Junaid)",
     liveUrl: null,
     apiDocsUrl: null,
     githubUrl: "https://github.com/JunaidWarraich1/atm_web_based"

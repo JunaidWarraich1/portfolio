@@ -73,7 +73,7 @@ export default function ProjectCard({ project }) {
         </div>
 
         {/* Tech Stack Pills */}
-        <div className="flex flex-wrap gap-1.5 mb-6">
+        <div className="flex flex-wrap gap-1.5 mb-5">
           {project.techStack.map((tech, idx) => (
             <span
               key={idx}
@@ -83,6 +83,14 @@ export default function ProjectCard({ project }) {
             </span>
           ))}
         </div>
+
+        {/* Demo Credentials Pill */}
+        {project.demoCredentials && (
+          <div className="mb-4 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-between text-xs">
+            <span className="text-slate-400 font-mono text-[10px] uppercase">Testing Access</span>
+            <span className="font-mono font-bold text-emerald-400 text-xs">{project.demoCredentials}</span>
+          </div>
+        )}
       </div>
 
       {/* Action Buttons */}
