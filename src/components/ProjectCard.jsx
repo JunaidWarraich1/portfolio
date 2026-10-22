@@ -119,16 +119,35 @@ export default function ProjectCard({ project }) {
           </a>
         )}
 
-        {project.githubUrl && (
-          <a
-            href={project.githubUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] text-slate-200 text-xs font-semibold transition-all hover:scale-[1.02] ml-auto"
-          >
-            <GithubIcon className="w-3.5 h-3.5" />
-            <span>GitHub Source</span>
-          </a>
+        {!project.liveUrl && project.githubUrl ? (
+          <>
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white text-xs font-semibold shadow-md shadow-blue-900/40 transition-all hover:scale-[1.02]"
+            >
+              <GithubIcon className="w-3.5 h-3.5" />
+              <span>Architecture &amp; Codebase</span>
+              <ArrowUpRight className="w-3.5 h-3.5 opacity-80" />
+            </a>
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-300 text-[11px] font-mono ml-auto">
+              <Server className="w-3 h-3 text-blue-400" />
+              <span>Backend Microservice</span>
+            </span>
+          </>
+        ) : (
+          project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/[0.1] text-slate-200 text-xs font-semibold transition-all hover:scale-[1.02] ml-auto"
+            >
+              <GithubIcon className="w-3.5 h-3.5" />
+              <span>GitHub Source</span>
+            </a>
+          )
         )}
       </div>
 

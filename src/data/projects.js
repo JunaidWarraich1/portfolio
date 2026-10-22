@@ -30,20 +30,21 @@ export const projects = [
     tagline: "Double-Entry Ledger & High-Concurrency Transaction Engine",
     category: "Fintech & Concurrency",
     featured: true,
-    statusBadge: "Enterprise Microservice",
+    isBackendOnly: true,
+    statusBadge: "ACID & Concurrency Microservice",
     badgeColor: "sapphire",
     summary: "Production-grade financial ledger engine enforcing strict double-entry invariants, atomic transaction isolation, and network retry protection for fintech applications.",
     architecture: [
       "Double-Entry Bookkeeping: Mathematical guarantee where every debit has an equal matching credit across all ledger legs (zero-sum balance invariant).",
-      "Concurrency & Race Conditions: Row-level pessimistic locking (SELECT FOR UPDATE) prevents double-spending during simultaneous concurrent withdrawal requests.",
+      "Concurrency & Race Conditions: Row-level pessimistic locking (SELECT FOR UPDATE) with ordered UUID locking eliminates deadlocks and concurrent double-spending.",
       "Idempotency Middleware: Intercepts duplicate client retry requests with cryptographic keys, guaranteeing zero duplicate ledger debits.",
-      "Database Evolution: Fully automated schema migrations powered by Alembic with containerized Docker deployment."
+      "Database Evolution & Tests: Fully automated schema migrations via Alembic with comprehensive Pytest concurrency test suites running on real PostgreSQL."
     ],
     metrics: [
       { label: "Ledger Accuracy", value: "Double-Entry (100%)" },
-      { label: "Concurrency Control", value: "Pessimistic Locks" },
-      { label: "Migrations", value: "Alembic Versioned" },
-      { label: "Architecture", value: "Repository-Service" }
+      { label: "Concurrency Control", value: "SELECT FOR UPDATE" },
+      { label: "Schema Evolution", value: "Alembic Versioned" },
+      { label: "Test Verification", value: "Pytest (Real Postgres)" }
     ],
     techStack: ["Python", "FastAPI", "PostgreSQL", "Alembic", "Docker", "Pytest", "SQLAlchemy"],
     liveUrl: null,
