@@ -28,22 +28,22 @@ export default function Hero() {
 
             {/* Short Human Intro */}
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              I’m <strong className="text-white font-semibold">Muhammad Junaid Warraich</strong>, a Full-Stack Developer with 1 year of software engineering experience at <span className="text-emerald-400 font-medium">Enigmatix</span>. I specialize in building end-to-end web applications with <span className="text-blue-400 font-medium">Python (FastAPI, Flask)</span>, modern <span className="text-cyan-400 font-medium">React 18</span>, and relational <span className="text-indigo-300 font-medium">PostgreSQL</span> databases.
+              I’m <strong className="text-white font-semibold">Muhammad Junaid Warraich</strong>, an experienced <strong className="text-emerald-400 font-semibold">Full-Stack Software Engineer</strong>. I specialize in building high-performance REST APIs, scalable distributed microservices, and modern reactive frontends using <span className="text-blue-400 font-medium">Python (FastAPI, Flask)</span>, <span className="text-cyan-400 font-medium">React 18</span>, and relational <span className="text-indigo-300 font-medium">PostgreSQL</span>—transforming complex product requirements into robust, production-grade systems.
             </p>
 
             {/* Core Competencies Chips */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-1 text-xs text-slate-300">
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                <span>1 Year Industry Experience @ Enigmatix</span>
+                <span>Experienced Full-Stack Engineer</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                <span>FastAPI, Flask &amp; REST Microservices</span>
+                <span>High-Performance APIs &amp; Microservices</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/[0.03] border border-white/[0.06]">
                 <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                <span>React 18, Vite &amp; Tailwind CSS</span>
+                <span>Production React &amp; Cloud Databases</span>
               </div>
             </div>
 
@@ -110,12 +110,12 @@ export default function Hero() {
             {/* Quick Experience Badges Under Photo */}
             <div className="grid grid-cols-3 gap-3 w-full max-w-sm mt-6">
               <div className="aurora-glass rounded-xl p-3 text-center border border-white/[0.08]">
-                <p className="text-lg font-extrabold text-white">1 Year</p>
-                <p className="text-[10px] text-slate-400 font-medium">At Enigmatix</p>
+                <p className="text-lg font-extrabold text-white">Full-Stack</p>
+                <p className="text-[10px] text-slate-400 font-medium">Experienced</p>
               </div>
               <div className="aurora-glass rounded-xl p-3 text-center border border-white/[0.08]">
-                <p className="text-lg font-extrabold text-emerald-400">Full-Stack</p>
-                <p className="text-[10px] text-slate-400 font-medium">Python &amp; React</p>
+                <p className="text-lg font-extrabold text-emerald-400">Python + React</p>
+                <p className="text-[10px] text-slate-400 font-medium">Core Stack</p>
               </div>
               <div className="aurora-glass rounded-xl p-3 text-center border border-white/[0.08]">
                 <p className="text-lg font-extrabold text-blue-400">5 Apps</p>

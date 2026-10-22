@@ -54,11 +54,9 @@ export default function SkillsSection() {
                           {skill.name}
                         </span>
                         <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full ${
-                          skill.level === 'Primary Stack' 
+                          skill.level === 'Advanced' 
                             ? 'bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-medium'
-                            : skill.level === 'Proficient'
-                            ? 'bg-blue-500/15 text-blue-300 border border-blue-500/30'
-                            : 'bg-cyan-500/15 text-cyan-300 border border-cyan-500/30'
+                            : 'bg-sky-500/15 text-sky-300 border border-sky-500/30 font-medium'
                         }`}>
                           {skill.level}
                         </span>
