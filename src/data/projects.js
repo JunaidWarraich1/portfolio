@@ -72,7 +72,7 @@ export const projects = [
       { label: "UI Library", value: "React 18 + Lucide" }
     ],
     techStack: ["React 18", "Vite", "JavaScript", "Algorithms", "Tailwind CSS", "Financial Math"],
-    liveUrl: null,
+    liveUrl: "https://equiledger-project.vercel.app/",
     apiDocsUrl: null,
     githubUrl: "https://github.com/JunaidWarraich1/equiledger_project"
   },
@@ -82,7 +82,7 @@ export const projects = [
     tagline: "Object-Oriented Banking Terminal & Algorithmic Cash Dispenser",
     category: "Algorithms & OOP",
     featured: true,
-    statusBadge: "10/10 Tests Passed",
+    statusBadge: "Live on Vercel",
     badgeColor: "amber",
     summary: "Full-scale banking simulator featuring strict Object-Oriented polymorphism, dynamic backtracking cash denomination dispensing, and cryptographic security state machines.",
     architecture: [
@@ -97,8 +97,8 @@ export const projects = [
       { label: "Runtime", value: "FastAPI + Vercel" }
     ],
     techStack: ["Python", "FastAPI", "Object-Oriented Design", "Unittest", "JavaScript", "Vercel"],
-    demoCredentials: "Demo PIN: 4321 (Muhammad Junaid)",
-    liveUrl: null,
+    demoCredentials: "PIN: 4321 (Muhammad Junaid) | PIN: 1984 (Ali Hassan)",
+    liveUrl: "https://atm-web-based.vercel.app/",
     apiDocsUrl: null,
     githubUrl: "https://github.com/JunaidWarraich1/atm_web_based"
   },

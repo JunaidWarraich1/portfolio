@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProjectsGrid from './components/ProjectsGrid';
+import ExperienceServices from './components/ExperienceServices';
 import TerminalSnippet from './components/TerminalSnippet';
 import SkillsSection from './components/SkillsSection';
 import AboutSection from './components/AboutSection';
@@ -15,6 +16,7 @@ export default function App() {
       <main className="flex-grow">
         <Hero />
         <ProjectsGrid />
+        <ExperienceServices />
         <TerminalSnippet />
         <SkillsSection />
         <AboutSection />

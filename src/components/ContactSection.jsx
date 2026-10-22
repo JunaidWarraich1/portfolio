@@ -83,14 +83,14 @@ export default function ContactSection() {
               <ArrowUpRight className="w-4 h-4 text-slate-500 group-hover:text-emerald-400 transition-colors" />
             </div>
             <div className="text-left">
-              <span className="text-[10px] font-mono text-slate-400 uppercase">Instant Chat</span>
+              <span className="text-[10px] font-mono text-slate-400 uppercase">Instant Chat / WhatsApp</span>
               <a
-                href="https://wa.me/923057199411"
+                href="https://wa.me/923481064513"
                 target="_blank"
                 rel="noreferrer"
                 className="block text-xs font-semibold text-slate-100 hover:text-emerald-400 transition-colors mt-0.5"
               >
-                +92 305 7199411
+                +92 348 1064513
               </a>
             </div>
           </div>

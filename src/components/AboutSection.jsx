@@ -1,5 +1,5 @@
 import React from 'react';
-import { Scale, Binary, ShieldAlert, BookOpen, Award, CheckCircle2 } from 'lucide-react';
+import { Code2, Award, BookOpen, Scale, CheckCircle2, ShieldCheck, Cpu } from 'lucide-react';
 
 export default function AboutSection() {
   return (
@@ -10,86 +10,87 @@ export default function AboutSection() {
           
           {/* Left Text Narrative */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-mono text-indigo-400">
-              <Scale className="w-3.5 h-3.5" />
-              <span>THE DUAL DEGREE ADVANTAGE</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-blue-400">
+              <Code2 className="w-3.5 h-3.5" />
+              <span>ABOUT MY WORK</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
-              Where Computer Science Logic Meets Regulatory &amp; Contractual Rigor.
+              Passionate About Clean Architecture, Scalable Backends &amp; Fast UIs.
             </h2>
 
             <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              Most developers only learn syntax; very few combine formal algorithmic foundations with legal precision. With a <strong className="text-white font-semibold">BS in Computer Science</strong> and completing an <strong className="text-white font-semibold">LLB (Law Degree)</strong>, I approach systems architecture through the lens of zero-tolerance correctness.
+              I am a <strong className="text-white font-semibold">Full-Stack Software Engineer</strong> with a strong foundation in computer science and real-world software house experience at <strong className="text-emerald-400 font-semibold">Enigmatix</strong>. My engineering approach centers around building reliable, maintainable software—from structured REST APIs and normalized database schemas to responsive, high-converting frontends.
             </p>
 
             <div className="space-y-3 pt-2">
               <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <Binary className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                <Cpu className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-semibold text-white">Algorithmic Precision &amp; Invariants</h4>
+                  <h4 className="text-sm font-semibold text-white">Full-Stack Problem Solver</h4>
                   <p className="text-xs text-slate-400 mt-0.5">
-                    Designing systems where mathematical invariants (like double-entry balance conservation) cannot be breached regardless of concurrent traffic.
+                    Comfortable working across the entire web stack: writing clean Python backend logic, modeling relational databases, and constructing interactive React user interfaces.
                   </p>
                 </div>
               </div>
 
               <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <ShieldAlert className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-semibold text-white">Compliance, Security &amp; Data Governance</h4>
+                  <h4 className="text-sm font-semibold text-white">Production Quality &amp; Security</h4>
                   <p className="text-xs text-slate-400 mt-0.5">
-                    Native understanding of data privacy, audit logging, idempotent payment security, and regulatory guardrails essential for fintech startups.
+                    Focused on secure authentication (JWT), input validation with Pydantic, database constraints, and automated unit testing to prevent regressions.
                   </p>
                 </div>
               </div>
+            </div>
 
-              <div className="flex items-start gap-3 p-3.5 rounded-xl bg-white/[0.02] border border-white/[0.06]">
-                <BookOpen className="w-5 h-5 text-indigo-400 shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="text-sm font-semibold text-white">Executive-Grade Documentation</h4>
-                  <p className="text-xs text-slate-400 mt-0.5">
-                    Clear, airtight architectural specifications and API documentation that bridge the gap between engineering teams and non-technical stakeholders.
-                  </p>
-                </div>
+            {/* Additional Edge: Dual Degree Note placed concisely below */}
+            <div className="p-4 rounded-xl bg-gradient-to-r from-indigo-950/40 via-blue-950/30 to-transparent border border-indigo-500/20">
+              <div className="flex items-center gap-2 mb-1.5 text-indigo-300 font-semibold text-xs font-mono uppercase tracking-wider">
+                <Scale className="w-3.5 h-3.5 text-indigo-400" />
+                <span>Additional Edge &bull; CS + Legal Studies (LLB)</span>
               </div>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                Alongside my Computer Science degree, I am also completing an <strong>LLB (Bachelor of Laws)</strong>. This background strengthens my analytical reasoning, attention to contractual details, and understanding of software compliance, data privacy, and IP—helping me bridge technical code with organizational requirements.
+              </p>
             </div>
 
           </div>
 
           {/* Right Card: Background Summary */}
           <div className="lg:col-span-5">
-            <div className="aurora-glass rounded-3xl p-8 border border-white/[0.1] shadow-2xl relative overflow-hidden">
+            <div className="aurora-glass rounded-3xl p-7 sm:p-8 border border-white/[0.1] shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-36 h-36 bg-blue-600/10 rounded-full blur-2xl pointer-events-none" />
 
               <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
                 <Award className="w-5 h-5 text-emerald-400" />
-                <span>Academic &amp; Professional Profile</span>
+                <span>Education &amp; Background</span>
               </h3>
 
               <div className="space-y-6">
                 <div>
-                  <span className="text-[11px] font-mono text-emerald-400 uppercase tracking-wider">Education</span>
+                  <span className="text-[11px] font-mono text-emerald-400 uppercase tracking-wider">Primary Education</span>
                   <p className="text-sm font-bold text-white mt-1">Bachelor of Science in Computer Science (BS CS)</p>
-                  <p className="text-xs text-slate-400">Data Structures, Algorithms, Distributed DBs, Systems Architecture</p>
+                  <p className="text-xs text-slate-400">Data Structures, Algorithms, Database Systems, Software Engineering</p>
                 </div>
 
                 <div className="pt-3 border-t border-white/[0.06]">
-                  <span className="text-[11px] font-mono text-blue-400 uppercase tracking-wider">Legal Studies</span>
+                  <span className="text-[11px] font-mono text-indigo-400 uppercase tracking-wider">Software House Experience</span>
+                  <p className="text-sm font-bold text-white mt-1">Enigmatix &bull; Full-Stack Software Engineer</p>
+                  <p className="text-xs text-slate-400">1 Year Experience &bull; Full-Stack Web Development, APIs &amp; PostgreSQL</p>
+                </div>
+
+                <div className="pt-3 border-t border-white/[0.06]">
+                  <span className="text-[11px] font-mono text-blue-400 uppercase tracking-wider">Complementary Legal Study</span>
                   <p className="text-sm font-bold text-white mt-1">Bachelor of Laws (LLB)</p>
-                  <p className="text-xs text-slate-400">Contractual Law, Corporate Governance, Cyber Crime &amp; Compliance</p>
-                </div>
-
-                <div className="pt-3 border-t border-white/[0.06]">
-                  <span className="text-[11px] font-mono text-indigo-400 uppercase tracking-wider">Professional Experience</span>
-                  <p className="text-sm font-bold text-white mt-1">Full-Stack &amp; Backend Engineering</p>
-                  <p className="text-xs text-slate-400">Software House track record building client-facing SaaS, REST microservices, and responsive SPAs</p>
+                  <p className="text-xs text-slate-400">Analytical Logic, Contract Law &amp; Digital Compliance</p>
                 </div>
 
                 <div className="pt-3 border-t border-white/[0.06]">
                   <span className="text-[11px] font-mono text-cyan-400 uppercase tracking-wider">Target Roles</span>
                   <p className="text-xs text-slate-200 mt-1 font-medium">
-                    Backend Engineer &bull; Full-Stack Python/React Developer &bull; Systems &amp; API Engineer
+                    Full-Stack Software Engineer &bull; Python / React Developer &bull; Backend API Engineer
                   </p>
                 </div>
               </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FileText, Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
+import { FileText, Menu, X, ArrowUpRight, Sparkles, Briefcase } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
 export default function Navbar() {
@@ -17,16 +17,16 @@ export default function Navbar() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-[#060813]/85 backdrop-blur-md border-b border-white/[0.08] py-3.5 shadow-xl shadow-black/40' 
+        ? 'bg-[#060813]/90 backdrop-blur-md border-b border-white/[0.08] py-3.5 shadow-xl shadow-black/40' 
         : 'bg-transparent py-5'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo & Status Badge */}
+          {/* Logo & Role Badge */}
           <div className="flex items-center gap-4">
             <a href="#" className="flex items-center gap-2.5 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-emerald-500 p-[1px] transition-transform duration-300 group-hover:scale-105">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-emerald-500 p-[1px] transition-transform duration-300 group-hover:scale-105 shadow-md shadow-blue-500/20">
                 <div className="w-full h-full bg-[#0c1022] rounded-[11px] flex items-center justify-center">
                   <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 tracking-wider text-base">
                     MJ
@@ -37,32 +37,35 @@ export default function Navbar() {
                 <span className="font-bold text-slate-100 text-sm tracking-tight group-hover:text-emerald-400 transition-colors">
                   Muhammad Junaid
                 </span>
-                <span className="text-[11px] text-slate-400 font-mono tracking-wider uppercase">
-                  Systems Engineer
+                <span className="text-[11px] text-emerald-400 font-mono tracking-wider uppercase font-medium">
+                  Full-Stack Developer
                 </span>
               </div>
             </a>
 
-            {/* Live Status Pill - Zero Salary Mention */}
+            {/* Live Status Pill */}
             <div className="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span className="text-xs font-medium text-emerald-400">Available for Remote & Full-Time Roles</span>
+              <span className="text-xs font-medium text-emerald-400">Available for Remote Full-Stack Roles</span>
             </div>
           </div>
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-7">
             <a href="#projects" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
-              Systems
+              Projects
+            </a>
+            <a href="#services" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+              Experience &amp; Services
             </a>
             <a href="#terminal" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
               Architecture
             </a>
             <a href="#skills" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
-              Tech Arsenal
+              Skills
             </a>
             <a href="#about" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
               About
@@ -108,18 +111,9 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
-            <a
-              href="/Muhammad_Junaid_Resume.html"
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 rounded-lg bg-blue-600 text-white text-xs"
-              title="Resume"
-            >
-              <FileText className="w-4 h-4" />
-            </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-xl bg-white/[0.05] border border-white/[0.08] text-slate-300 hover:text-white"
+              className="p-2.5 rounded-xl bg-white/[0.05] border border-white/[0.08] text-slate-300 hover:text-white"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -130,49 +124,48 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0a0d1d] border-b border-white/[0.08] px-4 pt-3 pb-6 space-y-3 mt-2 shadow-2xl">
-          <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 mb-3">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span className="text-xs text-emerald-400 font-medium">Available for Remote Roles Worldwide</span>
-          </div>
-
+        <div className="md:hidden bg-[#070a1a] border-b border-white/[0.08] px-4 pt-3 pb-6 space-y-3 mt-3">
           <a 
             href="#projects" 
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 text-base font-medium text-slate-200 hover:bg-white/[0.05] rounded-lg"
           >
-            Production Systems
+            Projects
+          </a>
+          <a 
+            href="#services" 
+            onClick={() => setMobileMenuOpen(false)}
+            className="block px-3 py-2 text-base font-medium text-slate-200 hover:bg-white/[0.05] rounded-lg"
+          >
+            Experience &amp; Services
           </a>
           <a 
             href="#terminal" 
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 text-base font-medium text-slate-200 hover:bg-white/[0.05] rounded-lg"
           >
-            Live Architecture
+            Architecture
           </a>
           <a 
             href="#skills" 
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 text-base font-medium text-slate-200 hover:bg-white/[0.05] rounded-lg"
           >
-            Technical Arsenal
+            Skills
           </a>
           <a 
             href="#about" 
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 text-base font-medium text-slate-200 hover:bg-white/[0.05] rounded-lg"
           >
-            Dual Degree & Background
+            About
           </a>
           <a 
             href="#contact" 
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 text-base font-medium text-slate-200 hover:bg-white/[0.05] rounded-lg"
           >
-            Contact & Hire
+            Contact
           </a>
 
           <div className="pt-3 border-t border-white/[0.08] flex items-center justify-between">
