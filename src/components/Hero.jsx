@@ -1,12 +1,12 @@
 import React from 'react';
-import { ArrowDown, Briefcase, FileText, CheckCircle2, MessageSquare, Sparkles } from 'lucide-react';
+import { ArrowDown, Briefcase, FileText, CheckCircle2, MessageSquare } from 'lucide-react';
 
-export default function Hero({ onOpenContact }) {
+export default function Hero() {
   const handleScrollTo = (e, targetId) => {
     e.preventDefault();
     const el = document.getElementById(targetId);
     if (el) {
-      const yOffset = -80;
+      const yOffset = -70;
       const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
@@ -57,18 +57,18 @@ export default function Hero({ onOpenContact }) {
               </div>
             </div>
 
-            {/* CTA Action Buttons - 1st Button is dedicated Contact & WhatsApp */}
+            {/* CTA Action Buttons - 1st Button scrolls smoothly to Contact & WhatsApp */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-4">
               {/* Primary 1st Button: Contact & WhatsApp */}
-              <button
-                type="button"
-                onClick={onOpenContact}
+              <a
+                href="#contact"
+                onClick={(e) => handleScrollTo(e, 'contact')}
                 className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-600 hover:from-emerald-500 hover:to-blue-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 border border-emerald-400/30 transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2 group cursor-pointer"
                 title="View WhatsApp number and contact info"
               >
                 <MessageSquare className="w-4 h-4 text-emerald-200 group-hover:scale-110 transition-transform" />
                 <span>Contact &amp; WhatsApp</span>
-              </button>
+              </a>
 
               {/* 2nd Button: View Live Projects */}
               <a
@@ -123,10 +123,10 @@ export default function Hero({ onOpenContact }) {
                   {/* Subtle Gradient Shadow */}
                   <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#060813] via-[#060813]/60 to-transparent pointer-events-none" />
 
-                  {/* On-Photo Pill: Clickable to open Contact */}
-                  <button
-                    type="button"
-                    onClick={onOpenContact}
+                  {/* On-Photo Pill */}
+                  <a
+                    href="#contact"
+                    onClick={(e) => handleScrollTo(e, 'contact')}
                     className="absolute bottom-3 inset-x-3 bg-black/75 hover:bg-black/90 backdrop-blur-md border border-white/10 hover:border-emerald-500/50 rounded-xl p-2.5 text-center transition-all cursor-pointer group/pill"
                     title="Click to view contact info"
                   >
@@ -135,7 +135,7 @@ export default function Hero({ onOpenContact }) {
                       <span>Full-Stack Software Engineer</span>
                       <span className="text-slate-400 group-hover/pill:text-emerald-300 transition-colors">&bull; Contact Info</span>
                     </p>
-                  </button>
+                  </a>
                 </div>
               </div>
 
