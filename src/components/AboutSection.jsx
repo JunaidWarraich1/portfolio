@@ -78,7 +78,7 @@ export default function AboutSection() {
                 <div className="pt-3 border-t border-white/[0.06]">
                   <span className="text-[11px] font-mono text-indigo-400 uppercase tracking-wider">Software House Experience</span>
                   <p className="text-sm font-bold text-white mt-1">Enigmatix &bull; Full-Stack Software Engineer</p>
-                  <p className="text-xs text-slate-400">1 Year Experience &bull; Full-Stack Web Development, APIs &amp; PostgreSQL</p>
+                  <p className="text-xs text-slate-400">Production Engineering &bull; Full-Stack Web Development, APIs &amp; PostgreSQL</p>
                 </div>
 
                 <div className="pt-3 border-t border-white/[0.06]">

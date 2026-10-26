@@ -55,7 +55,7 @@ export default function ExperienceServices() {
             Professional Experience &amp; What I Deliver
           </h2>
           <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
-            One year of production software house experience combined with end-to-end full-stack capabilities.
+            Production software house engineering experience combined with end-to-end full-stack capabilities.
           </p>
         </div>
 
@@ -78,7 +78,7 @@ export default function ExperienceServices() {
               </div>
               <div className="sm:text-right">
                 <span className="inline-block px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/25 text-xs font-mono text-blue-300">
-                  1 Year Experience &bull; Full-Time
+                  Full-Time Software Engineer
                 </span>
                 <p className="text-xs text-slate-400 mt-1 font-mono">Pakistan (Software House)</p>
               </div>
