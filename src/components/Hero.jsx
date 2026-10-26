@@ -1,7 +1,17 @@
 import React from 'react';
-import { ArrowDown, Code2, Database, Briefcase, FileText, CheckCircle2, Sparkles, Layers } from 'lucide-react';
+import { ArrowDown, Briefcase, FileText, CheckCircle2, MessageSquare, Sparkles } from 'lucide-react';
 
-export default function Hero() {
+export default function Hero({ onOpenContact }) {
+  const handleScrollTo = (e, targetId) => {
+    e.preventDefault();
+    const el = document.getElementById(targetId);
+    if (el) {
+      const yOffset = -80;
+      const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden aurora-bg">
       {/* Decorative Aurora Gradients */}
@@ -47,24 +57,40 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* CTA Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+            {/* CTA Action Buttons - 1st Button is dedicated Contact & WhatsApp */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-4">
+              {/* Primary 1st Button: Contact & WhatsApp */}
+              <button
+                type="button"
+                onClick={onOpenContact}
+                className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-600 hover:from-emerald-500 hover:to-blue-500 text-white font-bold text-sm shadow-xl shadow-emerald-600/30 border border-emerald-400/30 transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2 group cursor-pointer"
+                title="View WhatsApp number and contact info"
+              >
+                <MessageSquare className="w-4 h-4 text-emerald-200 group-hover:scale-110 transition-transform" />
+                <span>Contact &amp; WhatsApp</span>
+              </button>
+
+              {/* 2nd Button: View Live Projects */}
               <a
                 href="#projects"
-                className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-600 hover:from-blue-500 hover:to-emerald-500 text-white font-semibold text-sm shadow-lg shadow-blue-500/25 border border-white/20 transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2"
+                onClick={(e) => handleScrollTo(e, 'projects')}
+                className="px-5 py-3.5 rounded-xl bg-white/[0.06] hover:bg-white/[0.12] text-slate-100 hover:text-white font-semibold text-sm border border-white/[0.12] transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center gap-2"
               >
-                <span>View Live Projects</span>
-                <ArrowDown className="w-4 h-4" />
+                <span>View Projects</span>
+                <ArrowDown className="w-4 h-4 text-blue-400" />
               </a>
 
+              {/* 3rd Button: Experience & Services */}
               <a
                 href="#services"
-                className="px-6 py-3.5 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-slate-200 hover:text-white font-semibold text-sm border border-white/[0.1] transition-all hover:scale-[1.02] flex items-center gap-2"
+                onClick={(e) => handleScrollTo(e, 'services')}
+                className="px-4 py-3.5 rounded-xl bg-white/[0.03] hover:bg-white/[0.08] text-slate-300 hover:text-white font-medium text-sm border border-white/[0.08] transition-all hover:scale-[1.02] flex items-center gap-2"
               >
                 <Briefcase className="w-4 h-4 text-emerald-400" />
-                <span>Experience &amp; Services</span>
+                <span>Experience</span>
               </a>
 
+              {/* 4th Button: Download Resume */}
               <a
                 href="/Muhammad_Junaid_Resume.html"
                 target="_blank"
@@ -97,11 +123,19 @@ export default function Hero() {
                   {/* Subtle Gradient Shadow */}
                   <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#060813] via-[#060813]/60 to-transparent pointer-events-none" />
 
-                  {/* On-Photo Pill */}
-                  <div className="absolute bottom-3 inset-x-3 bg-black/70 backdrop-blur-md border border-white/10 rounded-xl p-2.5 text-center">
+                  {/* On-Photo Pill: Clickable to open Contact */}
+                  <button
+                    type="button"
+                    onClick={onOpenContact}
+                    className="absolute bottom-3 inset-x-3 bg-black/75 hover:bg-black/90 backdrop-blur-md border border-white/10 hover:border-emerald-500/50 rounded-xl p-2.5 text-center transition-all cursor-pointer group/pill"
+                    title="Click to view contact info"
+                  >
                     <p className="text-xs font-semibold text-white">Muhammad Junaid Warraich</p>
-                    <p className="text-[10px] text-emerald-400 font-mono">Full-Stack Software Engineer</p>
-                  </div>
+                    <p className="text-[10px] text-emerald-400 font-mono flex items-center justify-center gap-1">
+                      <span>Full-Stack Software Engineer</span>
+                      <span className="text-slate-400 group-hover/pill:text-emerald-300 transition-colors">&bull; Contact Info</span>
+                    </p>
+                  </button>
                 </div>
               </div>
 

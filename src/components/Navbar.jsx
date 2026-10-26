@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { FileText, Menu, X, ArrowUpRight, Sparkles, Briefcase } from 'lucide-react';
+import { FileText, Menu, X, ArrowUpRight, MessageSquare } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 
-export default function Navbar() {
+export default function Navbar({ onOpenContact }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -14,8 +14,25 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e, targetId) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    setTimeout(() => {
+      const element = document.getElementById(targetId);
+      if (element) {
+        const headerOffset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    }, 60);
+  };
+
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
       scrolled 
         ? 'bg-[#060813]/90 backdrop-blur-md border-b border-white/[0.08] py-3.5 shadow-xl shadow-black/40' 
         : 'bg-transparent py-5'
@@ -43,36 +60,65 @@ export default function Navbar() {
               </div>
             </a>
 
-            {/* Live Status Pill */}
-            <div className="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/25">
+            {/* Live Status Pill: Clickable to open Contact */}
+            <button
+              type="button"
+              onClick={onOpenContact}
+              className="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/25 hover:border-emerald-500/50 transition-all cursor-pointer"
+              title="Click to view contact number and reach out"
+            >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span className="text-xs font-medium text-emerald-400">Available for Remote Full-Stack Roles</span>
-            </div>
+              <span className="text-xs font-medium text-emerald-400">Available for Remote Roles</span>
+            </button>
           </div>
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-7">
-            <a href="#projects" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+            <a 
+              href="#projects" 
+              onClick={(e) => handleNavClick(e, 'projects')}
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            >
               Projects
             </a>
-            <a href="#services" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+            <a 
+              href="#services" 
+              onClick={(e) => handleNavClick(e, 'services')}
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            >
               Experience &amp; Services
             </a>
-            <a href="#terminal" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+            <a 
+              href="#terminal" 
+              onClick={(e) => handleNavClick(e, 'terminal')}
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            >
               Architecture
             </a>
-            <a href="#skills" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+            <a 
+              href="#skills" 
+              onClick={(e) => handleNavClick(e, 'skills')}
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            >
               Skills
             </a>
-            <a href="#about" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+            <a 
+              href="#about" 
+              onClick={(e) => handleNavClick(e, 'about')}
+              className="text-sm font-medium text-slate-300 hover:text-white transition-colors"
+            >
               About
             </a>
-            <a href="#contact" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
+            <button 
+              type="button"
+              onClick={onOpenContact}
+              className="text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors cursor-pointer"
+            >
               Contact
-            </a>
+            </button>
           </nav>
 
           {/* Action CTAs */}
@@ -95,6 +141,17 @@ export default function Navbar() {
             >
               <LinkedinIcon className="w-4 h-4" />
             </a>
+
+            {/* Direct Contact Button */}
+            <button
+              type="button"
+              onClick={onOpenContact}
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 text-emerald-400 hover:text-emerald-300 text-xs font-semibold border border-emerald-500/30 transition-all hover:scale-[1.02] cursor-pointer"
+              title="View contact number and WhatsApp"
+            >
+              <MessageSquare className="w-3.5 h-3.5" />
+              <span>Contact</span>
+            </button>
             
             {/* Download ATS Resume */}
             <a
@@ -112,8 +169,10 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <div className="flex md:hidden items-center gap-2">
             <button
+              type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-xl bg-white/[0.05] border border-white/[0.08] text-slate-300 hover:text-white"
+              className="p-2.5 rounded-xl bg-white/[0.05] border border-white/[0.08] text-slate-300 hover:text-white cursor-pointer"
+              aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -124,48 +183,57 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#070a1a] border-b border-white/[0.08] px-4 pt-3 pb-6 space-y-3 mt-3">
+        <div className="md:hidden bg-[#070a1a] border-b border-white/[0.08] px-4 pt-3 pb-6 space-y-3 mt-3 shadow-2xl">
+          {/* Prominent Contact Item at top of mobile menu */}
+          <button
+            type="button"
+            onClick={() => {
+              setMobileMenuOpen(false);
+              onOpenContact();
+            }}
+            className="w-full text-left px-3.5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600/25 to-teal-600/15 border border-emerald-500/30 flex items-center justify-between text-emerald-400 font-bold text-sm"
+          >
+            <span className="flex items-center gap-2">
+              <MessageSquare className="w-4 h-4" />
+              <span>Contact &amp; WhatsApp</span>
+            </span>
+            <span className="text-xs font-mono font-normal text-emerald-300">+92 348 1064513</span>
+          </button>
+
           <a 
             href="#projects" 
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => handleNavClick(e, 'projects')}
             className="block px-3 py-2 text-base font-medium text-slate-200 hover:bg-white/[0.05] rounded-lg"
           >
             Projects
           </a>
           <a 
             href="#services" 
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => handleNavClick(e, 'services')}
             className="block px-3 py-2 text-base font-medium text-slate-200 hover:bg-white/[0.05] rounded-lg"
           >
             Experience &amp; Services
           </a>
           <a 
             href="#terminal" 
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => handleNavClick(e, 'terminal')}
             className="block px-3 py-2 text-base font-medium text-slate-200 hover:bg-white/[0.05] rounded-lg"
           >
             Architecture
           </a>
           <a 
             href="#skills" 
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => handleNavClick(e, 'skills')}
             className="block px-3 py-2 text-base font-medium text-slate-200 hover:bg-white/[0.05] rounded-lg"
           >
             Skills
           </a>
           <a 
             href="#about" 
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={(e) => handleNavClick(e, 'about')}
             className="block px-3 py-2 text-base font-medium text-slate-200 hover:bg-white/[0.05] rounded-lg"
           >
             About
-          </a>
-          <a 
-            href="#contact" 
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 text-base font-medium text-slate-200 hover:bg-white/[0.05] rounded-lg"
-          >
-            Contact
           </a>
 
           <div className="pt-3 border-t border-white/[0.08] flex items-center justify-between">
